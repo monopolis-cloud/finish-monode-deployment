@@ -1,5 +1,5 @@
-name: 'Monopolis: Start Monode Deployment'
-description: 'Registers the start of a Monode deployment'
+name: 'Monopolis: Finish Monode Deployment'
+description: 'Registers the end of a Monode deployment'
 author: 'Monopolis'
 branding:
   icon: 'rss'
