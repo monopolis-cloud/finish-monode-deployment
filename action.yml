@@ -4,6 +4,10 @@ author: 'Monopolis'
 branding:
   icon: 'rss'
   color: 'gray-dark'
+inputs:
+  status:
+    description: 'The status to report for this deployment.'
+    required: true
 outputs:
   environment_map:
     description: 'A map of the SHAs of the other Monodes deployed to this environment.'
