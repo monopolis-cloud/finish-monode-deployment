@@ -2,7 +2,7 @@ name: 'Monopolis: Finish Monode Deployment'
 description: 'Registers the end of a Monode deployment'
 author: 'Monopolis'
 branding:
-  icon: 'rss'
+  icon: 'code'
   color: 'gray-dark'
 inputs:
   status:
