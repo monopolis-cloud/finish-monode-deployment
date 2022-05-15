@@ -1,16 +1,13 @@
-name: 'Monopolis: Finish Monode Deployment'
-description: 'Registers the end of a Monode deployment'
+name: 'Monopolis: Finish Monode Rollout'
+description: 'Registers the end of a Monode rollout'
 author: 'Monopolis'
 branding:
   icon: 'code'
   color: 'gray-dark'
 inputs:
   status:
-    description: 'The status to report for this deployment.'
+    description: 'The status to report for this rollout.'
     required: true
-outputs:
-  environment_map:
-    description: 'A map of the SHAs of the other Monodes deployed to this environment.'
 runs:
   using: 'docker'
   image: 'Dockerfile'

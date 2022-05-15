@@ -1,6 +1,6 @@
-# Monopolis: Finish Monode Deployment
+# Monopolis: Finish Monode Rollout
 
-This action is designed to work with Monopolis deployment workflows only. It finishes a deployment from a GitHub Actions pipeline
+This action is designed to work with Monopolis Monode rollouts workflows only. It finishes a deployment from a GitHub Actions pipeline
 
 ## Action inputs
 | Name   | Sample value            | Description                  |
@@ -14,7 +14,7 @@ None. These are picked up automatically from the input event which triggered the
 This example demonstrates the usage.
 
 ```yml
-name: Example monode deployment
+name: Example monode rollout
 
 on:
   workflow_dispatch:
@@ -27,8 +27,8 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - id: finish_monode_deployment
-        uses: monopolis-cloud/finish-monode-deployment@main
+      - id: finish
+        uses: monopolis-cloud/finish-monode-rollout@main
         with:
           status: success
         env:
