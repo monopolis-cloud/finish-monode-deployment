@@ -4,14 +4,14 @@ get_from_event() {
   jq -r "$1" "${GITHUB_EVENT_PATH}"
 }
 
-if [ -z "${INPUT_STATUS}" ]; then
-  echo "Missing input status"
+if [ -z "${INPUT_SUCCESS}" ]; then
+  echo "Missing input success"
   exit 1
 fi
-INPUT_STATUS=$(echo "$INPUT_STATUS" | tr '[:upper:]' '[:lower:]')
+INPUT_STATUS=$(echo "$INPUT_SUCCESS" | tr '[:upper:]' '[:lower:]')
 
 if jq --exit-status '.inputs.deployment_id' "$GITHUB_EVENT_PATH" >/dev/null; then
-  MONOPOLIS_URL="https://github-api.monopolis.cloud/deploy/finish/$(get_from_event '.repository.full_name')/$(get_from_event '.inputs.deployment_id')/${INPUT_STATUS}"
+  MONOPOLIS_URL="https://github-api.monopolis.cloud/rollout/finish/$(get_from_event '.repository.full_name')/$(get_from_event '.inputs.deployment_id')/${INPUT_SUCCESS}"
 
   curl --fail -X POST "${MONOPOLIS_URL}" -H "Authorization: Bearer ${GITHUB_TOKEN}"
 fi
