@@ -5,8 +5,8 @@ branding:
   icon: 'code'
   color: 'gray-dark'
 inputs:
-  status:
-    description: 'The status to report for this rollout.'
+  success:
+    description: 'If this rollout succeded.'
     required: true
 runs:
   using: 'docker'
