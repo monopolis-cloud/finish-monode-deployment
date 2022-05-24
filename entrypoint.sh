@@ -13,5 +13,5 @@ INPUT_STATUS=$(echo "$INPUT_SUCCESS" | tr '[:upper:]' '[:lower:]')
 if jq --exit-status '.inputs.deployment_id' "$GITHUB_EVENT_PATH" >/dev/null; then
   MONOPOLIS_URL="https://github-api.monopolis.cloud/rollout/finish/$(get_from_event '.repository.full_name')/$(get_from_event '.inputs.deployment_id')/${INPUT_SUCCESS}"
 
-  curl --fail-with-body -X POST "${MONOPOLIS_URL}" -H "Authorization: Bearer ${GITHUB_TOKEN}"
+  curl --fail -X POST "${MONOPOLIS_URL}" -H "Authorization: Bearer ${GITHUB_TOKEN}"
 fi
