@@ -1,6 +1,6 @@
 # Monopolis: Finish Monode Rollout
 
-This action is designed to work with Monopolis Monode rollouts workflows only. It finishes a deployment from a GitHub Actions pipeline
+This action is designed to work with Monopolis Monode rollouts workflows only. It finishes a rollout from a GitHub Actions pipeline
 
 ## Action inputs
 | Name    | Sample value | Description              |
@@ -19,8 +19,8 @@ name: Example monode rollout
 on:
   workflow_dispatch:
     inputs:
-      deployment_id:
-        description: Deployment ID
+      ROLLOUT_ID:
+        description: Rollout Id
         required: true
         type: string
 jobs:

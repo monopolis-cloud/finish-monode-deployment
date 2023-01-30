@@ -6,7 +6,7 @@ branding:
   color: 'gray-dark'
 inputs:
   success:
-    description: 'If this rollout succeded.'
+    description: 'If this rollout succeeded.'
     required: true
 runs:
   using: 'docker'
