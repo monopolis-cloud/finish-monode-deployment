@@ -10,8 +10,8 @@ if [ -z "${INPUT_SUCCESS}" ]; then
 fi
 INPUT_STATUS=$(echo "$INPUT_SUCCESS" | tr '[:upper:]' '[:lower:]')
 
-if jq --exit-status '.inputs.ROLLOUT_ID' "$GITHUB_EVENT_PATH" >/dev/null; then
-  MONOPOLIS_URL="https://github-api.monopolis.cloud/rollout/finish/$(get_from_event '.repository.full_name')/$(get_from_event '.inputs.ROLLOUT_ID')/${INPUT_SUCCESS}"
+if jq --exit-status '.inputs.ROLLOUT_DEPLOYMENT_ID' "$GITHUB_EVENT_PATH" >/dev/null; then
+  MONOPOLIS_URL="https://github-api.monopolis.cloud/rollout/finish/$(get_from_event '.repository.full_name')/$(get_from_event '.inputs.ROLLOUT_DEPLOYMENT_ID')/${INPUT_SUCCESS}"
 
   curl --fail -X POST "${MONOPOLIS_URL}" -H "Authorization: Bearer ${GITHUB_TOKEN}"
 fi
